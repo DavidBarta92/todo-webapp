@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <title>Todo webapp</title>
 </head>
 <body>
+<h1 class="text-warning">Todo</h1>
 <form method="post" action="/todo/add">
     <input type="text" placeholder="Add new" name="new">
     <input type="submit" value="Add">
 </form>
-<table>
-    <thead>
+<table class="table table-striped">
+    <thead class="thead-dark">
     <td>Done</td>
     <td>Title</td>
     <td>Urgent</td>
@@ -23,5 +25,7 @@
         <td><a th:href="@{'/todo/update/' + ${todo.id}}" class="editbutton">Edit</a></td>
     </tr>
 </table>
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
 </body>
 </html>
